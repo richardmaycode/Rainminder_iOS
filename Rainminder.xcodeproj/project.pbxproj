@@ -11,6 +11,10 @@
 		932A027E295B983F000AAD1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A027D295B983F000AAD1E /* ContentView.swift */; };
 		932A0280295B9841000AAD1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 932A027F295B9841000AAD1E /* Assets.xcassets */; };
 		932A0283295B9841000AAD1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 932A0282295B9841000AAD1E /* Preview Assets.xcassets */; };
+		932A028B295B98EB000AAD1E /* InfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A028A295B98EB000AAD1E /* InfoCard.swift */; };
+		932A028D295B9A51000AAD1E /* InfoGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A028C295B9A51000AAD1E /* InfoGrid.swift */; };
+		932A028F295BA1B2000AAD1E /* WeekSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A028E295BA1B2000AAD1E /* WeekSummary.swift */; };
+		932A0291295BA383000AAD1E /* Calendar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A0290295BA383000AAD1E /* Calendar+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		932A027D295B983F000AAD1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		932A027F295B9841000AAD1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		932A0282295B9841000AAD1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		932A028A295B98EB000AAD1E /* InfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCard.swift; sourceTree = "<group>"; };
+		932A028C295B9A51000AAD1E /* InfoGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGrid.swift; sourceTree = "<group>"; };
+		932A028E295BA1B2000AAD1E /* WeekSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekSummary.swift; sourceTree = "<group>"; };
+		932A0290295BA383000AAD1E /* Calendar+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +59,12 @@
 		932A027A295B983F000AAD1E /* Rainminder */ = {
 			isa = PBXGroup;
 			children = (
+				932A0289295B98D8000AAD1E /* Views */,
 				932A027B295B983F000AAD1E /* RainminderApp.swift */,
 				932A027D295B983F000AAD1E /* ContentView.swift */,
 				932A027F295B9841000AAD1E /* Assets.xcassets */,
 				932A0281295B9841000AAD1E /* Preview Content */,
+				932A0290295BA383000AAD1E /* Calendar+Ext.swift */,
 			);
 			path = Rainminder;
 			sourceTree = "<group>";
@@ -65,6 +75,16 @@
 				932A0282295B9841000AAD1E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		932A0289295B98D8000AAD1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				932A028A295B98EB000AAD1E /* InfoCard.swift */,
+				932A028C295B9A51000AAD1E /* InfoGrid.swift */,
+				932A028E295BA1B2000AAD1E /* WeekSummary.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +158,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				932A027E295B983F000AAD1E /* ContentView.swift in Sources */,
+				932A0291295BA383000AAD1E /* Calendar+Ext.swift in Sources */,
+				932A028B295B98EB000AAD1E /* InfoCard.swift in Sources */,
 				932A027C295B983F000AAD1E /* RainminderApp.swift in Sources */,
+				932A028F295BA1B2000AAD1E /* WeekSummary.swift in Sources */,
+				932A028D295B9A51000AAD1E /* InfoGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
