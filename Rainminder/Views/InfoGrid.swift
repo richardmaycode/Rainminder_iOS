@@ -28,7 +28,6 @@ struct InfoGrid: View {
                 InfoCard(title: item.title, icon: item.icon, stat: item.stat)
             }
         }
-        .padding(.horizontal)
     }
 }
 
