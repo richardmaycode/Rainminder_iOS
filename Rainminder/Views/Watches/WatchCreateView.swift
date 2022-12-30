@@ -93,16 +93,13 @@ struct WatchCreateView: View {
     }
     
     func watchDayLabel(for selection: [Int]) -> String {
+        let options = [
+            [1, 2, 3, 4, 5, 6, 7]: "Everyday",
+            [2, 3, 4, 5, 6]: "Weekdays",
+            [1, 7]: "Weekends"
+        ]
         
-        let everyday: [Int] = [1, 2, 3, 4, 5, 6, 7]
-        let weekdays: [Int] = [2, 3, 4, 5, 6]
-        let weekends: [Int] = [1, 7]
-        
-        guard selection != everyday else { return "Everyday" }
-        guard selection != weekdays else { return "Weekdays" }
-        guard selection != weekends else { return "Weekends" }
-        
-        return "Custom"
+        return options[selection, default: "Custom"]
     }
 }
 
