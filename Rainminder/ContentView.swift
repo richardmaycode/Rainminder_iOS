@@ -60,7 +60,7 @@ struct ContentView: View {
         }
         .sheet(isPresented: $presentingAddWatcher) {
             NavigationStack {
-                WatchCreateView(onSubmit: nil, onCancel: nil)
+                WatchCreateView(onSubmit: nil, onCancel: { closeWatchForm() })
             }
         }
         
@@ -75,6 +75,10 @@ struct ContentView: View {
         .font(.system(.title, design: .rounded))
         .padding(.vertical)
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    func closeWatchForm() {
+        presentingAddWatcher = false
     }
 }
 

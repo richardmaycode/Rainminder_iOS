@@ -11,16 +11,18 @@ struct WatchDay: Identifiable, Equatable {
     let id: Int
     let key: String
     var value: Bool
+    let shortKey: String
     
     static let options: [WatchDay] = [
-        WatchDay(id: 1, key: "Sun", value: true),
-        WatchDay(id: 2, key: "Mon", value: true),
-        WatchDay(id: 3, key: "Tue", value: true),
-        WatchDay(id: 4, key: "Wed", value: true),
-        WatchDay(id: 5, key: "Thr", value: true),
-        WatchDay(id: 6, key: "Fri", value: true),
-        WatchDay(id: 7, key: "Sat", value: true),
+        WatchDay(id: 1, key: "Sun", value: true, shortKey: "S"),
+        WatchDay(id: 2, key: "Mon", value: true, shortKey: "M"),
+        WatchDay(id: 3, key: "Tue", value: true, shortKey: "T"),
+        WatchDay(id: 4, key: "Wed", value: true, shortKey: "W"),
+        WatchDay(id: 5, key: "Thr", value: true, shortKey: "R"),
+        WatchDay(id: 6, key: "Fri", value: true, shortKey: "F"),
+        WatchDay(id: 7, key: "Sat", value: true, shortKey: "S"),
     ]
+    
 }
 
 enum WatchSelection: String, Identifiable, CaseIterable {
@@ -63,6 +65,7 @@ struct WatchCreateView: View {
     
     @State private var watchSelection: WatchSelection = .everyday
     @State private var selectionLabel: String = WatchSelection.everyday.label
+    @State private var test: String = "Everyday"
         
     let onSubmit: (() -> Void)?
     let onCancel: (() -> Void)?
@@ -76,38 +79,63 @@ struct WatchCreateView: View {
                         .tag(watchtype)
                 }
             }
+//            Section {
+//                Picker("Days to Watch", selection: $watchSelection) {
+//                    ForEach(WatchSelection.allCases) { selection in
+//                        Text(selection.rawValue.capitalized)
+//                            .tag(selection)
+//                    }
+//                }
+//                .onChange(of: watchSelection) { newValue in
+//                    selectionLabel = newValue.label
+//
+//                    for index in watchDays.indices {
+//                        watchDays[index].value = newValue.values[index]
+//                    }
+//
+//
+//                }
+//
+//                if(watchSelection == .custom) {
+//                    ForEach($watchDays) { $day in
+//                        Toggle(day.key, isOn: $day.value)
+//                    }
+//
+//                }
+//            } header: {
+//                Text("Watch Days")
+//            } footer: {
+//                Text(selectionLabel)
+//                    .font(.caption2)
+//            }
+            
             Section {
-                Picker("Days to Watch", selection: $watchSelection) {
-                    ForEach(WatchSelection.allCases) { selection in
-                        Text(selection.rawValue.capitalized)
-                            .tag(selection)
+                Grid(horizontalSpacing: 8) {
+                    GridRow {
+                        ForEach($watchDays) { $day in
+                            WatchDayToggle(label: day.shortKey, choice: $day.value)
+                        }
+                        .onChange(of: watchDays) { newValue in
+                            
+                            selectionLabel = newValue.filter { $0.value }.map { $0.key }.joined(separator: ", ")
+                            
+                            let filteredDays = watchDays.filter { $0.value == true }.map { $0.id }
+                            
+                            test = watchDayLabel(for: filteredDays)
+                            
+                        }
                     }
-                }
-                .onChange(of: watchSelection) { newValue in
-                    selectionLabel = newValue.label
-                    
-                    for index in watchDays.indices {
-                        watchDays[index].value = newValue.values[index]
-                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(5)
                 }
                 
-                if(watchSelection == .custom) {
-                    ForEach($watchDays) { $day in
-                        Toggle(day.key, isOn: $day.value)
-                    }
-                    .onChange(of: watchDays) { newValue in
-                        
-                        selectionLabel = newValue.filter { $0.value }.map { $0.key }.joined(separator: ", ")
-                        
-                        
-                    }
-                }
             } header: {
                 Text("Watch Days")
             } footer: {
-                Text(selectionLabel)
-                    .font(.caption2)
+                Text(test)
             }
+            
+            
         }
         .navigationTitle("Create Watch")
         .toolbar {
@@ -129,6 +157,27 @@ struct WatchCreateView: View {
             
 
         }
+    }
+    
+    func watchDayLabel(for selection: [Int]) -> String {
+        
+        let weekdays: [Int] = [2, 3, 4, 5, 6]
+        let weekends: [Int] = [1, 7]
+        let everyday: [Int] = [1, 2, 3, 4, 5, 6, 7]
+        
+        guard selection != everyday else {
+            return "Everyday"
+        }
+        
+        guard selection != weekdays else {
+            return "Weekdays"
+        }
+        
+        guard selection != weekends else {
+            return "Weekends"
+        }
+        
+        return "Custom"
     }
 }
 
