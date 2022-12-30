@@ -25,47 +25,13 @@ struct WatchDay: Identifiable, Equatable {
     
 }
 
-enum WatchSelection: String, Identifiable, CaseIterable {
-    case everyday, weekdays, weekends, custom
-    
-    var id: String { self.rawValue}
-    
-    var label: String {
-        switch self {
-        case .everyday:
-            return "Mon, Tues, Wed, Thr, Fri, Sat, Sun"
-        case .weekdays:
-            return "Mon, Tues, Wed, Thr, Fri"
-        case .weekends:
-            return "Sat, Sun"
-        case .custom:
-            return "Mon, Tues, Wed, Thr, Fri, Sat, Sun"
-        }
-    }
-    
-    var values: [Bool] {
-        switch self {
-        case .everyday:
-            return [true, true, true, true, true, true, true]
-        case .weekdays:
-            return [false, true, true, true, true, true, false]
-        case .weekends:
-            return [true, false, false, false, false, false, true]
-        case .custom:
-            return [true, true, true, true, true, true, true]
-        }
-    }
-}
-
 struct WatchCreateView: View {
     
     @State private var name: String = ""
     @State private var watchType: WatchType = .avoid
     @State private var watchDays: [WatchDay] = WatchDay.options
     
-    @State private var watchSelection: WatchSelection = .everyday
-    @State private var selectionLabel: String = WatchSelection.everyday.label
-    @State private var test: String = "Everyday"
+    @State private var selectionLabel: String = "Everyday"
         
     let onSubmit: (() -> Void)?
     let onCancel: (() -> Void)?
@@ -79,35 +45,6 @@ struct WatchCreateView: View {
                         .tag(watchtype)
                 }
             }
-//            Section {
-//                Picker("Days to Watch", selection: $watchSelection) {
-//                    ForEach(WatchSelection.allCases) { selection in
-//                        Text(selection.rawValue.capitalized)
-//                            .tag(selection)
-//                    }
-//                }
-//                .onChange(of: watchSelection) { newValue in
-//                    selectionLabel = newValue.label
-//
-//                    for index in watchDays.indices {
-//                        watchDays[index].value = newValue.values[index]
-//                    }
-//
-//
-//                }
-//
-//                if(watchSelection == .custom) {
-//                    ForEach($watchDays) { $day in
-//                        Toggle(day.key, isOn: $day.value)
-//                    }
-//
-//                }
-//            } header: {
-//                Text("Watch Days")
-//            } footer: {
-//                Text(selectionLabel)
-//                    .font(.caption2)
-//            }
             
             Section {
                 Grid(horizontalSpacing: 8) {
@@ -116,13 +53,9 @@ struct WatchCreateView: View {
                             WatchDayToggle(label: day.shortKey, choice: $day.value)
                         }
                         .onChange(of: watchDays) { newValue in
-                            
-                            selectionLabel = newValue.filter { $0.value }.map { $0.key }.joined(separator: ", ")
-                            
                             let filteredDays = watchDays.filter { $0.value == true }.map { $0.id }
                             
-                            test = watchDayLabel(for: filteredDays)
-                            
+                            selectionLabel = watchDayLabel(for: filteredDays)
                         }
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
@@ -132,7 +65,7 @@ struct WatchCreateView: View {
             } header: {
                 Text("Watch Days")
             } footer: {
-                Text(test)
+                Text(selectionLabel)
             }
             
             
@@ -161,21 +94,13 @@ struct WatchCreateView: View {
     
     func watchDayLabel(for selection: [Int]) -> String {
         
+        let everyday: [Int] = [1, 2, 3, 4, 5, 6, 7]
         let weekdays: [Int] = [2, 3, 4, 5, 6]
         let weekends: [Int] = [1, 7]
-        let everyday: [Int] = [1, 2, 3, 4, 5, 6, 7]
         
-        guard selection != everyday else {
-            return "Everyday"
-        }
-        
-        guard selection != weekdays else {
-            return "Weekdays"
-        }
-        
-        guard selection != weekends else {
-            return "Weekends"
-        }
+        guard selection != everyday else { return "Everyday" }
+        guard selection != weekdays else { return "Weekdays" }
+        guard selection != weekends else { return "Weekends" }
         
         return "Custom"
     }
