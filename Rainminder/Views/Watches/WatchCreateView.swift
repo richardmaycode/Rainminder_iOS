@@ -30,6 +30,10 @@ struct WatchCreateView: View {
     @State private var name: String = ""
     @State private var watchType: WatchType = .avoid
     @State private var watchDays: [WatchDay] = WatchDay.options
+
+    @State private var notify: Bool = false
+    @State private var weekly: Bool = false
+    @State private var daily: Bool = false
     
     @State private var selectionLabel: String = "Everyday"
         
@@ -57,15 +61,25 @@ struct WatchCreateView: View {
                             
                             selectionLabel = watchDayLabel(for: filteredDays)
                         }
+                        .padding(.vertical)
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(5)
                 }
                 
             } header: {
-                Text("Watch Days")
+                Label("Watch Days", systemImage: "calendar")
             } footer: {
                 Text(selectionLabel)
+            }
+            
+            Section {
+                Toggle("Notify Me", isOn: $notify)
+                if notify {
+                    Toggle("Weekly", isOn: $weekly)
+                    Toggle("Daily", isOn: $daily)
+                }
+            } header: {
+                Label("Notifications", systemImage: "bell.fill")
             }
             
             
