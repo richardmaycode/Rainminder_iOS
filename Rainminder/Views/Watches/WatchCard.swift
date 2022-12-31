@@ -26,6 +26,7 @@ enum WatchType: Int, Identifiable, Hashable, CaseIterable {
 struct WatchCard: View {
     
     let title: String
+    let notify: Bool
     @State var watchType: WatchType
     
     var iconColor: Color {
@@ -38,17 +39,29 @@ struct WatchCard: View {
     }
     
     var body: some View {
-        GroupBox {
-            Grid(horizontalSpacing: 10, verticalSpacing: 10) {
-                gridHeaderRow
-                dataRow(icon: "plus.slash.minus", data: Array(repeating: "---", count: 7))
-                dataRow(icon: "percent", data: Array(repeating: "---", count: 7))
+        VStack {
+            GroupBox {
+                Grid(horizontalSpacing: 10, verticalSpacing: 10) {
+                    gridHeaderRow
+                    dataRow(icon: "plus.slash.minus", data: Array(repeating: "---", count: 7))
+                    dataRow(icon: "percent", data: Array(repeating: "---", count: 7))
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.vertical, 5)
+            } label: {
+                boxHeader
             }
+            
+            HStack {
+                Image(systemName: "bell")
+                Text("Weekly")
+                
+            }
+            .font(.caption2)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.vertical, 5)
-        } label: {
-            boxHeader
+            .padding(.leading)
         }
+        .padding(.bottom)
     }
     
     var gridHeaderRow: some View {
@@ -67,6 +80,7 @@ struct WatchCard: View {
             
             Text(title)
                 .font(.system(.headline, design: .rounded))
+            
             Spacer()
             Button {
                 
@@ -97,7 +111,7 @@ struct WatchCard: View {
 
 struct WatchCard_Previews: PreviewProvider {
     static var previews: some View {
-        WatchCard(title: "Sprinklers", watchType: .need)
+        WatchCard(title: "Sprinklers", notify: true, watchType: .need)
             .previewLayout(.fixed(width: 400, height: 400))
     }
 }

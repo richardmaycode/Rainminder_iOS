@@ -87,7 +87,7 @@ struct WatchCreateView: View {
         .navigationTitle("Create Watch")
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
-                Button(action: { }) {
+                Button(action: { onCancel?() }) {
                     Text("Dismiss")
                 }
             }

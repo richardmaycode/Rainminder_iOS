@@ -18,6 +18,7 @@
 		932A0293295CC422000AAD1E /* WatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A0292295CC422000AAD1E /* WatchCard.swift */; };
 		932A0296295D00B0000AAD1E /* WatchCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A0295295D00B0000AAD1E /* WatchCreateView.swift */; };
 		932A0298295DEE73000AAD1E /* WatchDayToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A0297295DEE73000AAD1E /* WatchDayToggle.swift */; };
+		932A029A296087CF000AAD1E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A0299296087CF000AAD1E /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		932A0292295CC422000AAD1E /* WatchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCard.swift; sourceTree = "<group>"; };
 		932A0295295D00B0000AAD1E /* WatchCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCreateView.swift; sourceTree = "<group>"; };
 		932A0297295DEE73000AAD1E /* WatchDayToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDayToggle.swift; sourceTree = "<group>"; };
+		932A0299296087CF000AAD1E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				932A028A295B98EB000AAD1E /* InfoCard.swift */,
 				932A028C295B9A51000AAD1E /* InfoGrid.swift */,
 				932A028E295BA1B2000AAD1E /* WeekSummary.swift */,
+				932A0299296087CF000AAD1E /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				932A0291295BA383000AAD1E /* Calendar+Ext.swift in Sources */,
 				932A0298295DEE73000AAD1E /* WatchDayToggle.swift in Sources */,
 				932A028B295B98EB000AAD1E /* InfoCard.swift in Sources */,
+				932A029A296087CF000AAD1E /* SettingsView.swift in Sources */,
 				932A027C295B983F000AAD1E /* RainminderApp.swift in Sources */,
 				932A028F295BA1B2000AAD1E /* WeekSummary.swift in Sources */,
 				932A0296295D00B0000AAD1E /* WatchCreateView.swift in Sources */,

@@ -18,8 +18,8 @@ struct ContentView: View {
                 WeekSummary()
                 
                 sectionHeader("Watches", icon: "binoculars.fill")
-                WatchCard(title: "Fishing", watchType: .need)
-                WatchCard(title: "Running", watchType: .avoid)
+                WatchCard(title: "Fishing", notify: true, watchType: .need)
+                WatchCard(title: "Running", notify: false, watchType: .avoid)
             }
             .padding(.horizontal)
             .navigationTitle("Rainminder")
@@ -51,9 +51,13 @@ struct ContentView: View {
                     Button(action: {
                         
                     }) {
-                        Image(systemName: "person")
-                            .symbolVariant(.circle)
-                            .symbolRenderingMode(.hierarchical)
+                        NavigationLink {
+                            SettingsView()
+                        } label: {
+                            Image(systemName: "gear")
+                                .symbolRenderingMode(.hierarchical)
+                        }
+                        .buttonStyle(.plain)
                     }
                 }
             }
