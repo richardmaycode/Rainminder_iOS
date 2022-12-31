@@ -11,7 +11,7 @@ struct SettingsView: View {
     
     @AppStorage(AppStorageKeys.colorScheme) var currentStyle: InterfaceStyle = .system
     
-    @AppStorage("accent_color") var currentAccentColor: AccentStyle = .blue
+    @AppStorage(AppStorageKeys.accent) var currentAccentColor: AccentStyle = .blue
     
     @AppStorage(AppStorageKeys.sounds) var currentSound: Bool = true
     @AppStorage(AppStorageKeys.haptics) var currentHaptics: Bool = true

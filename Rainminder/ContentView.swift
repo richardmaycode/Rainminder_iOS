@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @AppStorage(AppStorageKeys.accent) var currentAccentColor: AccentStyle = .blue
+    
     @State private var presentingAddWatcher: Bool = false
     
     var body: some View {
@@ -62,11 +64,13 @@ struct ContentView: View {
                 }
             }
         }
+        .tint(currentAccentColor.color)
         .sheet(isPresented: $presentingAddWatcher) {
             NavigationStack {
                 WatchCreateView(onSubmit: nil, onCancel: { closeWatchForm() })
             }
         }
+        
         
     }
     
