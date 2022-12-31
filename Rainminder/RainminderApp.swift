@@ -12,6 +12,7 @@ struct RainminderApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modifier(UserColorSchemeModifier())
         }
     }
 }

@@ -9,18 +9,14 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @State var sound: Bool = true
-    @State var haptics: Bool = true
-    
+    @AppStorage(UserColorSchemeModifier.defaultKey) var currentStyle: InterfaceStyle = .system
+    @AppStorage("allow_sounds") var currentSound: Bool = true
+    @AppStorage("allow_haptics") var currentHaptics: Bool = true
+        
     var body: some View {
         VStack {
-            
-            
-            
             List {
-                
                 pro
-                
                 cosmetics
                 general
                 getInTouch
@@ -42,6 +38,17 @@ struct SettingsView: View {
     
     var cosmetics: some View {
         Section {
+            
+            Picker(selection: $currentStyle) {
+                ForEach(InterfaceStyle.allCases) { style in
+                    Text(style.label)
+                        .tag(style)
+                }
+            } label: {
+                Label("Color Scheme", systemImage: "circle.lefthalf.filled")
+            }
+
+            
             NavigationLink {
                 Text("Accents")
             } label: {
@@ -62,12 +69,12 @@ struct SettingsView: View {
     var general: some View {
         Section {
             LabeledContent {
-                Toggle("", isOn: $sound)
+                Toggle("", isOn: $currentSound)
             } label: {
                 Label("Sound", systemImage: "music.note")
             }
             LabeledContent {
-                Toggle("", isOn: $sound)
+                Toggle("", isOn: $currentHaptics)
             } label: {
                 Label("Haptics", systemImage: "directcurrent")
             }
