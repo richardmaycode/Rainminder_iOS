@@ -9,9 +9,12 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @AppStorage(UserColorSchemeModifier.defaultKey) var currentStyle: InterfaceStyle = .system
-    @AppStorage("allow_sounds") var currentSound: Bool = true
-    @AppStorage("allow_haptics") var currentHaptics: Bool = true
+    @AppStorage(AppStorageKeys.colorScheme) var currentStyle: InterfaceStyle = .system
+    
+    @AppStorage("accent_color") var currentAccentColor: AccentStyle = .blue
+    
+    @AppStorage(AppStorageKeys.sounds) var currentSound: Bool = true
+    @AppStorage(AppStorageKeys.haptics) var currentHaptics: Bool = true
         
     var body: some View {
         VStack {
@@ -31,14 +34,13 @@ struct SettingsView: View {
         NavigationLink {
             Text("Pro")
         } label: {
-            Label("Pro", systemImage: "drop")
+            Label("Unlock Pro", systemImage: "drop")
         }
 
     }
     
     var cosmetics: some View {
         Section {
-            
             Picker(selection: $currentStyle) {
                 ForEach(InterfaceStyle.allCases) { style in
                     Text(style.label)
@@ -48,11 +50,21 @@ struct SettingsView: View {
                 Label("Color Scheme", systemImage: "circle.lefthalf.filled")
             }
 
-            
             NavigationLink {
-                Text("Accents")
+                AccentsPicker(accentColor: $currentAccentColor)
             } label: {
-                Label("Accents", systemImage: "paintpalette")
+                LabeledContent {
+                    HStack {
+                        Circle()
+                            .fill(currentAccentColor.color)
+                            
+                            .frame(width: 20)
+                        Text(currentAccentColor.label.capitalized)
+                    }
+                } label: {
+                    Label("Accent Color", systemImage: "paintpalette")
+                }
+
             }
             
             NavigationLink {
@@ -73,6 +85,7 @@ struct SettingsView: View {
             } label: {
                 Label("Sound", systemImage: "music.note")
             }
+            
             LabeledContent {
                 Toggle("", isOn: $currentHaptics)
             } label: {
@@ -84,17 +97,13 @@ struct SettingsView: View {
             } label: {
                 Label("Backups", systemImage: "cloud.fill")
             }
-
-
         } header: {
             Text("General")
         }
     }
     
-    
     var getInTouch: some View {
         Section {
-            
             Link(destination: URL(string: "mailto:richard.wise@hey.com")!) {
                 LabeledContent {
                     Image(systemName: "line.diagonal.arrow")
@@ -124,9 +133,6 @@ struct SettingsView: View {
             } label: {
                 Label("Tip Jar", systemImage: "dollarsign.circle.fill")
             }
-
-            
-            
         } header: {
             Text("Get in touch")
         }

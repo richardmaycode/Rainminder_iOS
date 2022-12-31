@@ -21,6 +21,9 @@
 		932A029A296087CF000AAD1E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A0299296087CF000AAD1E /* SettingsView.swift */; };
 		932A029C2960AEC8000AAD1E /* InterfaceStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A029B2960AEC7000AAD1E /* InterfaceStyle.swift */; };
 		932A029E2960AFAD000AAD1E /* UserColorSchemeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A029D2960AFAD000AAD1E /* UserColorSchemeModifier.swift */; };
+		932A02A12960B4E8000AAD1E /* AppStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02A02960B4E8000AAD1E /* AppStorageKeys.swift */; };
+		932A02A42960B82F000AAD1E /* AccentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02A32960B82F000AAD1E /* AccentStyle.swift */; };
+		932A02A62960BC6A000AAD1E /* AccentsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02A52960BC6A000AAD1E /* AccentsPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		932A0299296087CF000AAD1E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		932A029B2960AEC7000AAD1E /* InterfaceStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceStyle.swift; sourceTree = "<group>"; };
 		932A029D2960AFAD000AAD1E /* UserColorSchemeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserColorSchemeModifier.swift; sourceTree = "<group>"; };
+		932A02A02960B4E8000AAD1E /* AppStorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKeys.swift; sourceTree = "<group>"; };
+		932A02A32960B82F000AAD1E /* AccentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentStyle.swift; sourceTree = "<group>"; };
+		932A02A52960BC6A000AAD1E /* AccentsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentsPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,7 @@
 		932A027A295B983F000AAD1E /* Rainminder */ = {
 			isa = PBXGroup;
 			children = (
+				932A029F2960B4C4000AAD1E /* Utilities */,
 				932A0289295B98D8000AAD1E /* Views */,
 				932A027B295B983F000AAD1E /* RainminderApp.swift */,
 				932A027D295B983F000AAD1E /* ContentView.swift */,
@@ -79,6 +86,7 @@
 				932A0290295BA383000AAD1E /* Calendar+Ext.swift */,
 				932A029B2960AEC7000AAD1E /* InterfaceStyle.swift */,
 				932A029D2960AFAD000AAD1E /* UserColorSchemeModifier.swift */,
+				932A02A32960B82F000AAD1E /* AccentStyle.swift */,
 			);
 			path = Rainminder;
 			sourceTree = "<group>";
@@ -94,11 +102,11 @@
 		932A0289295B98D8000AAD1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				932A02A22960B743000AAD1E /* Settings */,
 				932A0294295D0098000AAD1E /* Watches */,
 				932A028A295B98EB000AAD1E /* InfoCard.swift */,
 				932A028C295B9A51000AAD1E /* InfoGrid.swift */,
 				932A028E295BA1B2000AAD1E /* WeekSummary.swift */,
-				932A0299296087CF000AAD1E /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,6 +119,23 @@
 				932A0297295DEE73000AAD1E /* WatchDayToggle.swift */,
 			);
 			path = Watches;
+			sourceTree = "<group>";
+		};
+		932A029F2960B4C4000AAD1E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				932A02A02960B4E8000AAD1E /* AppStorageKeys.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		932A02A22960B743000AAD1E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				932A0299296087CF000AAD1E /* SettingsView.swift */,
+				932A02A52960BC6A000AAD1E /* AccentsPicker.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,8 +209,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				932A0293295CC422000AAD1E /* WatchCard.swift in Sources */,
+				932A02A12960B4E8000AAD1E /* AppStorageKeys.swift in Sources */,
 				932A027E295B983F000AAD1E /* ContentView.swift in Sources */,
+				932A02A42960B82F000AAD1E /* AccentStyle.swift in Sources */,
 				932A029E2960AFAD000AAD1E /* UserColorSchemeModifier.swift in Sources */,
+				932A02A62960BC6A000AAD1E /* AccentsPicker.swift in Sources */,
 				932A0291295BA383000AAD1E /* Calendar+Ext.swift in Sources */,
 				932A0298295DEE73000AAD1E /* WatchDayToggle.swift in Sources */,
 				932A028B295B98EB000AAD1E /* InfoCard.swift in Sources */,
