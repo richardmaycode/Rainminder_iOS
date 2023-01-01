@@ -25,18 +25,8 @@ enum WatchType: Int, Identifiable, Hashable, CaseIterable {
 
 struct WatchCard: View {
     
-    let title: String
-    let notify: Bool
-    @State var watchType: WatchType
-    
-    var iconColor: Color {
-        switch watchType {
-        case .need:
-            return .green
-        case .avoid:
-            return .red
-        }
-    }
+    let watch: Watch
+    let onDetail: (( ) -> Void)?
     
     var body: some View {
         VStack {
@@ -78,12 +68,12 @@ struct WatchCard: View {
         HStack {
             icon
             
-            Text(title)
+            Text(watch.name)
                 .font(.system(.headline, design: .rounded))
             
             Spacer()
             Button {
-                
+                onDetail?()
             } label: {
                 Image(systemName: "ellipsis")
             }
@@ -92,9 +82,9 @@ struct WatchCard: View {
     
     var icon: some View {
         Circle()
-            .foregroundColor(iconColor)
+            .foregroundColor(watch.iconColor)
             .frame(width: 10, height: 10, alignment: .center)
-            .shadow(color: iconColor, radius: 2)
+            .shadow(color: watch.iconColor, radius: 2)
     }
     
     @ViewBuilder
@@ -111,7 +101,7 @@ struct WatchCard: View {
 
 struct WatchCard_Previews: PreviewProvider {
     static var previews: some View {
-        WatchCard(title: "Sprinklers", notify: true, watchType: .need)
+        WatchCard(watch: Watch.data.first!, onDetail: { })
             .previewLayout(.fixed(width: 400, height: 400))
     }
 }

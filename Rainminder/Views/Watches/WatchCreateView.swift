@@ -23,6 +23,16 @@ struct WatchDay: Identifiable, Equatable {
         WatchDay(id: 7, key: "Sat", value: true, shortKey: "S"),
     ]
     
+    static let optionsVaried: [WatchDay] = [
+        WatchDay(id: 1, key: "Sun", value: Bool.random(), shortKey: "S"),
+        WatchDay(id: 2, key: "Mon", value: Bool.random(), shortKey: "M"),
+        WatchDay(id: 3, key: "Tue", value: Bool.random(), shortKey: "T"),
+        WatchDay(id: 4, key: "Wed", value: Bool.random(), shortKey: "W"),
+        WatchDay(id: 5, key: "Thr", value: Bool.random(), shortKey: "R"),
+        WatchDay(id: 6, key: "Fri", value: Bool.random(), shortKey: "F"),
+        WatchDay(id: 7, key: "Sat", value: Bool.random(), shortKey: "S"),
+    ]
+    
 }
 
 struct WatchCreateView: View {

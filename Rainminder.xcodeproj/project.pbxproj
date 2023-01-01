@@ -24,6 +24,8 @@
 		932A02A12960B4E8000AAD1E /* AppStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02A02960B4E8000AAD1E /* AppStorageKeys.swift */; };
 		932A02A42960B82F000AAD1E /* AccentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02A32960B82F000AAD1E /* AccentStyle.swift */; };
 		932A02A62960BC6A000AAD1E /* AccentsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02A52960BC6A000AAD1E /* AccentsPicker.swift */; };
+		932A02A829620FEA000AAD1E /* Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02A729620FEA000AAD1E /* Watch.swift */; };
+		932A02AA2962165F000AAD1E /* WatchDayDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02A92962165F000AAD1E /* WatchDayDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		932A02A02960B4E8000AAD1E /* AppStorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKeys.swift; sourceTree = "<group>"; };
 		932A02A32960B82F000AAD1E /* AccentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentStyle.swift; sourceTree = "<group>"; };
 		932A02A52960BC6A000AAD1E /* AccentsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentsPicker.swift; sourceTree = "<group>"; };
+		932A02A729620FEA000AAD1E /* Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
+		932A02A92962165F000AAD1E /* WatchDayDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDayDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 				932A029B2960AEC7000AAD1E /* InterfaceStyle.swift */,
 				932A029D2960AFAD000AAD1E /* UserColorSchemeModifier.swift */,
 				932A02A32960B82F000AAD1E /* AccentStyle.swift */,
+				932A02A729620FEA000AAD1E /* Watch.swift */,
 			);
 			path = Rainminder;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 				932A0292295CC422000AAD1E /* WatchCard.swift */,
 				932A0295295D00B0000AAD1E /* WatchCreateView.swift */,
 				932A0297295DEE73000AAD1E /* WatchDayToggle.swift */,
+				932A02A92962165F000AAD1E /* WatchDayDisplay.swift */,
 			);
 			path = Watches;
 			sourceTree = "<group>";
@@ -221,6 +227,8 @@
 				932A027C295B983F000AAD1E /* RainminderApp.swift in Sources */,
 				932A029C2960AEC8000AAD1E /* InterfaceStyle.swift in Sources */,
 				932A028F295BA1B2000AAD1E /* WeekSummary.swift in Sources */,
+				932A02A829620FEA000AAD1E /* Watch.swift in Sources */,
+				932A02AA2962165F000AAD1E /* WatchDayDisplay.swift in Sources */,
 				932A0296295D00B0000AAD1E /* WatchCreateView.swift in Sources */,
 				932A028D295B9A51000AAD1E /* InfoGrid.swift in Sources */,
 			);

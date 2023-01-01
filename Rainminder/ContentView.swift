@@ -12,6 +12,9 @@ struct ContentView: View {
     @AppStorage(AppStorageKeys.accent) var currentAccentColor: AccentStyle = .blue
     
     @State private var presentingAddWatcher: Bool = false
+    @State private var presentingWatcherDetails: Bool = false
+    
+    @State var selectedWatch: Watch?
     
     var body: some View {
         NavigationStack {
@@ -20,8 +23,9 @@ struct ContentView: View {
                 WeekSummary()
                 
                 sectionHeader("Watches", icon: "binoculars.fill")
-                WatchCard(title: "Fishing", notify: true, watchType: .need)
-                WatchCard(title: "Running", notify: false, watchType: .avoid)
+                ForEach(Watch.data) { watch in
+                    WatchCard(watch: watch, onDetail: { showWatchDetail(for: watch)})
+                }
             }
             .padding(.horizontal)
             .navigationTitle("Rainminder")
@@ -70,6 +74,87 @@ struct ContentView: View {
                 WatchCreateView(onSubmit: nil, onCancel: { closeWatchForm() })
             }
         }
+        .sheet(item: $selectedWatch) { watch in
+            
+                VStack {
+                    
+                    HStack {
+                        Text(watch.name)
+                            .font(.title)
+                        Spacer()
+                        Button {
+                            selectedWatch = nil
+                        } label: {
+                            Label("Close", systemImage: "xmark.circle.fill")
+                                .font(.title3)
+                                .labelStyle(.iconOnly)
+                        }
+                        .tint(.gray)
+                    }
+                    .padding(.vertical)
+                    
+                    Grid(horizontalSpacing: 8) {
+                        GridRow {
+                            ForEach(selectedWatch?.watchDays ?? [WatchDay]()) { day in
+                                WatchDayDisplay(day: day)
+                            }
+
+                            
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                    
+                    HStack {
+                        Button {
+                            
+                        } label: {
+                            Text("Edit")
+                                .font(.title2)
+                                .frame(maxWidth: .infinity)
+                                .padding(10)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        
+                        
+                        
+                        Button {
+                            
+                        } label: {
+                            Label("Share", systemImage: "square.and.arrow.up")
+                                .font(.title2)
+                                .labelStyle(.iconOnly)
+                                .padding(10)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.yellow)
+                        
+                        Button(role: .destructive) {
+                            
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                                .font(.title2)
+                                .labelStyle(.iconOnly)
+                                .padding(10)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        
+                        
+                    }
+                    .padding(.vertical)
+                    Spacer()
+                }
+                .padding()
+                .presentationDetents([.fraction(0.33)])
+                
+                
+                
+                    
+            
+            
+        }
+        .modifier(UserColorSchemeModifier())
+
+        
         
         
     }
@@ -87,6 +172,10 @@ struct ContentView: View {
     
     func closeWatchForm() {
         presentingAddWatcher = false
+    }
+    
+    func showWatchDetail(for watch: Watch) {
+        selectedWatch = watch
     }
 }
 
