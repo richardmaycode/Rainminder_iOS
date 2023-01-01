@@ -71,7 +71,7 @@ struct ContentView: View {
         .tint(currentAccentColor.color)
         .sheet(isPresented: $presentingAddWatcher) {
             NavigationStack {
-                WatchCreateView(onSubmit: nil, onCancel: { closeWatchForm() })
+                WatchCreateView(watch: nil, onSubmit: nil, onCancel: { closeWatchForm() })
             }
         }
         .sheet(item: $selectedWatch) { watch in
@@ -82,14 +82,8 @@ struct ContentView: View {
                         Text(watch.name)
                             .font(.title)
                         Spacer()
-                        Button {
-                            selectedWatch = nil
-                        } label: {
-                            Label("Close", systemImage: "xmark.circle.fill")
-                                .font(.title3)
-                                .labelStyle(.iconOnly)
-                        }
-                        .tint(.gray)
+                        Image(systemName: "bell")
+                            .symbolVariant(watch.notifies ? .fill : .slash)
                     }
                     .padding(.vertical)
                     
@@ -102,7 +96,9 @@ struct ContentView: View {
                             
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
+
                     }
+                    .frame(minHeight: 35)
                     
                     HStack {
                         Button {
@@ -115,28 +111,27 @@ struct ContentView: View {
                         }
                         .buttonStyle(.borderedProminent)
                         
-                        
-                        
-                        Button {
-                            
-                        } label: {
+                        ShareLink(item: watch.name) {
                             Label("Share", systemImage: "square.and.arrow.up")
-                                .font(.title2)
+                                .font(.title2.bold())
                                 .labelStyle(.iconOnly)
                                 .padding(10)
+                                .foregroundColor(.yellow)
                         }
                         .buttonStyle(.borderedProminent)
-                        .tint(.yellow)
-                        
-                        Button(role: .destructive) {
+                        .tint(.yellow.opacity(0.3))
+
+                        Button {
                             
                         } label: {
                             Label("Delete", systemImage: "trash")
                                 .font(.title2)
                                 .labelStyle(.iconOnly)
                                 .padding(10)
+                                .foregroundColor(.red)
                         }
                         .buttonStyle(.borderedProminent)
+                        .tint(.red.opacity(0.3))
                         
                         
                     }
@@ -144,7 +139,8 @@ struct ContentView: View {
                     Spacer()
                 }
                 .padding()
-                .presentationDetents([.fraction(0.33)])
+                .presentationDetents([.fraction(0.30)])
+                .presentationDragIndicator(.visible)
                 
                 
                 

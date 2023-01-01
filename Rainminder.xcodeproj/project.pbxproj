@@ -49,6 +49,7 @@
 		932A02A52960BC6A000AAD1E /* AccentsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentsPicker.swift; sourceTree = "<group>"; };
 		932A02A729620FEA000AAD1E /* Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
 		932A02A92962165F000AAD1E /* WatchDayDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDayDisplay.swift; sourceTree = "<group>"; };
+		932A02AB29621979000AAD1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 		932A027A295B983F000AAD1E /* Rainminder */ = {
 			isa = PBXGroup;
 			children = (
+				932A02AB29621979000AAD1E /* Info.plist */,
 				932A029F2960B4C4000AAD1E /* Utilities */,
 				932A0289295B98D8000AAD1E /* Views */,
 				932A027B295B983F000AAD1E /* RainminderApp.swift */,
@@ -362,7 +364,7 @@
 				DEVELOPMENT_TEAM = 43SS4W48UT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Rainminder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -391,7 +393,7 @@
 				DEVELOPMENT_TEAM = 43SS4W48UT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Rainminder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

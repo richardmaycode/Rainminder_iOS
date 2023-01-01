@@ -37,6 +37,8 @@ struct WatchDay: Identifiable, Equatable {
 
 struct WatchCreateView: View {
     
+    let watch: Watch?
+    
     @State private var name: String = ""
     @State private var watchType: WatchType = .avoid
     @State private var watchDays: [WatchDay] = WatchDay.options
@@ -130,7 +132,7 @@ struct WatchCreateView: View {
 struct WatchCreateView_Previews: PreviewProvider {
     static var previews: some View {
         return NavigationStack {
-            WatchCreateView(onSubmit: nil, onCancel: nil)
+            WatchCreateView(watch: nil, onSubmit: nil, onCancel: nil)
         }
     }
 }
