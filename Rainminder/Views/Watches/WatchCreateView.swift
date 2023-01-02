@@ -98,9 +98,11 @@ struct WatchCreateView: View {
         }
         .navigationTitle("Create Watch")
         .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                Button(action: { onCancel?() }) {
-                    Text("Dismiss")
+            if watch == nil {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button(action: { onCancel?() }) {
+                        Text("Dismiss")
+                    }
                 }
             }
             

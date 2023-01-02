@@ -33,8 +33,8 @@ struct WatchCard: View {
             GroupBox {
                 Grid(horizontalSpacing: 10, verticalSpacing: 10) {
                     gridHeaderRow
-                    dataRow(icon: "plus.slash.minus", data: Array(repeating: "---", count: 7))
-                    dataRow(icon: "percent", data: Array(repeating: "---", count: 7))
+                    dataRow(icon: "plus.slash.minus", data: DataPoint(value: "---").generateRow(count: 7))
+                    dataRow(icon: "percent", data: DataPoint(value: "---").generateRow(count: 7))
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.vertical, 5)
@@ -88,11 +88,11 @@ struct WatchCard: View {
     }
     
     @ViewBuilder
-    func dataRow(icon: String, data: [String]) -> some View {
+    func dataRow(icon: String, data: [DataPoint]) -> some View {
         GridRow {
             Image(systemName: icon)
-            ForEach(data, id: \.self) { data in
-                Text(data)
+            ForEach(data) { data in
+                Text(data.value)
             }
         }
     }

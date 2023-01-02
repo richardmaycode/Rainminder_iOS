@@ -7,15 +7,32 @@
 
 import SwiftUI
 
+struct DataPoint: Identifiable {
+    let id = UUID()
+    let value: String
+    
+    func generateRow(count: Int) -> [DataPoint] {
+        
+        var items = [DataPoint]()
+        
+        for _ in 0..<count {
+            items.append(DataPoint(value: "---"))
+        }
+        
+        return items
+    }
+}
+
+
 struct WeekSummary: View {
     var body: some View {
         GroupBox {
             Grid(horizontalSpacing: 10, verticalSpacing: 10) {
                 gridHeaderRow
-                gridDataRow(icon: "sunrise", data: Array(repeating: "---", count: 7))
-                gridDataRow(icon: "sun.max", data: Array(repeating: "---", count: 7))
-                gridDataRow(icon: "sunset", data: Array(repeating: "---", count: 7))
-                gridDataRow(icon: "moon.stars", data: Array(repeating: "---", count: 7))
+                gridDataRow(icon: "sunrise", data: DataPoint(value: "---").generateRow(count: 7))
+                gridDataRow(icon: "sun.max", data: DataPoint(value: "---").generateRow(count: 7))
+                gridDataRow(icon: "sunset", data: DataPoint(value: "---").generateRow(count: 7))
+                gridDataRow(icon: "moon.stars", data: DataPoint(value: "---").generateRow(count: 7))
             }
             .padding(.vertical, 8)
         } label: {
@@ -35,11 +52,11 @@ struct WeekSummary: View {
     }
     
     @ViewBuilder
-    func gridDataRow(icon: String, data: [String]) -> some View {
+    func gridDataRow(icon: String, data: [DataPoint]) -> some View {
         GridRow {
             Image(systemName: icon)
-            ForEach(data, id: \.self) { data in
-                Text(data)
+            ForEach(data) { data in
+                Text(data.value)
             }
         }
     }

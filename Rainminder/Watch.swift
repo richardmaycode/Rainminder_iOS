@@ -24,6 +24,12 @@ struct Watch: Identifiable {
     }
 }
 
+extension Watch: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
 extension Watch {
     static let data: [Watch] = [
         Watch(name: "Sprinklers",

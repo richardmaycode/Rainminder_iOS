@@ -10,11 +10,13 @@ import SwiftUI
 struct ContentView: View {
     
     @AppStorage(AppStorageKeys.accent) var currentAccentColor: AccentStyle = .blue
-    
+
     @State private var presentingAddWatcher: Bool = false
     @State private var presentingWatcherDetails: Bool = false
+    @State private var isEditingWatch: Bool = false
     
     @State var selectedWatch: Watch?
+    @State var editWatch: Watch?
     
     var body: some View {
         NavigationStack {
@@ -25,6 +27,10 @@ struct ContentView: View {
                 sectionHeader("Watches", icon: "binoculars.fill")
                 ForEach(Watch.data) { watch in
                     WatchCard(watch: watch, onDetail: { showWatchDetail(for: watch)})
+                }
+
+                .navigationDestination(isPresented: $isEditingWatch) {
+                    WatchCreateView(watch: editWatch, onSubmit: { }, onCancel: { })
                 }
             }
             .padding(.horizontal)
@@ -102,7 +108,7 @@ struct ContentView: View {
                     
                     HStack {
                         Button {
-                            
+                            editWatch(for: watch)
                         } label: {
                             Text("Edit")
                                 .font(.title2)
@@ -141,14 +147,8 @@ struct ContentView: View {
                 .padding()
                 .presentationDetents([.fraction(0.30)])
                 .presentationDragIndicator(.visible)
-                
-                
-                
-                    
-            
-            
         }
-        .modifier(UserColorSchemeModifier())
+        
 
         
         
@@ -172,6 +172,12 @@ struct ContentView: View {
     
     func showWatchDetail(for watch: Watch) {
         selectedWatch = watch
+    }
+    
+    func editWatch(for watch: Watch ) {
+        editWatch = watch
+        selectedWatch = nil
+        isEditingWatch = true
     }
 }
 

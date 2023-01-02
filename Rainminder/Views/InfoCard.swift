@@ -21,21 +21,15 @@ struct InfoCard: View {
                     .font(.headline)
                     .lineLimit(2, reservesSpace: true)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                
                 Image(systemName: icon)
                     .font(.system(size: 32))
                     .frame(maxHeight: .infinity, alignment: .top)
-//                    .foregroundStyle(.white.shadow(.inner(color: .gray, radius: 1, x: 1, y: 1)))
-                
             }
-            
-            
-            
             
             Text(stat)
                 .font(.system(size: 56, weight: .bold, design: .rounded))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                
-            
         }
         .padding()
         .foregroundColor(.white)
@@ -44,7 +38,6 @@ struct InfoCard: View {
             RoundedRectangle(cornerRadius: 8)
                 .fill(.blue.gradient)
         }
-
     }
 }
 
