@@ -15,6 +15,8 @@ struct SettingsView: View {
     
     @AppStorage(AppStorageKeys.sounds) var currentSound: Bool = true
     @AppStorage(AppStorageKeys.haptics) var currentHaptics: Bool = true
+    
+    @State var primaryLocation: String = "Parkland, FL"
         
     var body: some View {
         VStack {
@@ -91,6 +93,18 @@ struct SettingsView: View {
             } label: {
                 Label("Haptics", systemImage: "directcurrent")
             }
+            
+            NavigationLink {
+                PrimaryLocationPicker(primaryLocation: $primaryLocation)
+            } label: {
+                LabeledContent {
+                    Text(primaryLocation)
+                } label: {
+                    Label("Primary Location", systemImage: "mappin.and.ellipse")
+                }
+
+            }
+
             
             NavigationLink {
                 Text("Cloud Backups")
