@@ -26,7 +26,8 @@
 		932A02A62960BC6A000AAD1E /* AccentsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02A52960BC6A000AAD1E /* AccentsPicker.swift */; };
 		932A02A829620FEA000AAD1E /* Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02A729620FEA000AAD1E /* Watch.swift */; };
 		932A02AA2962165F000AAD1E /* WatchDayDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02A92962165F000AAD1E /* WatchDayDisplay.swift */; };
-		932A02AD2964D42A000AAD1E /* PrimaryLocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02AC2964D42A000AAD1E /* PrimaryLocationPicker.swift */; };
+		932A02AD2964D42A000AAD1E /* LocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02AC2964D42A000AAD1E /* LocationPicker.swift */; };
+		932A02AF29651E7E000AAD1E /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02AE29651E7E000AAD1E /* LocationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +52,8 @@
 		932A02A729620FEA000AAD1E /* Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
 		932A02A92962165F000AAD1E /* WatchDayDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDayDisplay.swift; sourceTree = "<group>"; };
 		932A02AB29621979000AAD1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		932A02AC2964D42A000AAD1E /* PrimaryLocationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryLocationPicker.swift; sourceTree = "<group>"; };
+		932A02AC2964D42A000AAD1E /* LocationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPicker.swift; sourceTree = "<group>"; };
+		932A02AE29651E7E000AAD1E /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				932A028A295B98EB000AAD1E /* InfoCard.swift */,
 				932A028C295B9A51000AAD1E /* InfoGrid.swift */,
 				932A028E295BA1B2000AAD1E /* WeekSummary.swift */,
+				932A02AE29651E7E000AAD1E /* LocationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,7 +147,7 @@
 			children = (
 				932A0299296087CF000AAD1E /* SettingsView.swift */,
 				932A02A52960BC6A000AAD1E /* AccentsPicker.swift */,
-				932A02AC2964D42A000AAD1E /* PrimaryLocationPicker.swift */,
+				932A02AC2964D42A000AAD1E /* LocationPicker.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -222,7 +225,7 @@
 				932A0293295CC422000AAD1E /* WatchCard.swift in Sources */,
 				932A02A12960B4E8000AAD1E /* AppStorageKeys.swift in Sources */,
 				932A027E295B983F000AAD1E /* ContentView.swift in Sources */,
-				932A02AD2964D42A000AAD1E /* PrimaryLocationPicker.swift in Sources */,
+				932A02AD2964D42A000AAD1E /* LocationPicker.swift in Sources */,
 				932A02A42960B82F000AAD1E /* AccentStyle.swift in Sources */,
 				932A029E2960AFAD000AAD1E /* UserColorSchemeModifier.swift in Sources */,
 				932A02A62960BC6A000AAD1E /* AccentsPicker.swift in Sources */,
@@ -234,6 +237,7 @@
 				932A029C2960AEC8000AAD1E /* InterfaceStyle.swift in Sources */,
 				932A028F295BA1B2000AAD1E /* WeekSummary.swift in Sources */,
 				932A02A829620FEA000AAD1E /* Watch.swift in Sources */,
+				932A02AF29651E7E000AAD1E /* LocationCell.swift in Sources */,
 				932A02AA2962165F000AAD1E /* WatchDayDisplay.swift in Sources */,
 				932A0296295D00B0000AAD1E /* WatchCreateView.swift in Sources */,
 				932A028D295B9A51000AAD1E /* InfoGrid.swift in Sources */,

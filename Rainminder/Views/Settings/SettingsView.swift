@@ -16,7 +16,7 @@ struct SettingsView: View {
     @AppStorage(AppStorageKeys.sounds) var currentSound: Bool = true
     @AppStorage(AppStorageKeys.haptics) var currentHaptics: Bool = true
     
-    @State var primaryLocation: String = "Parkland, FL"
+    @State var locations: [RMLocation] = RMLocation.data()
         
     var body: some View {
         VStack {
@@ -95,12 +95,12 @@ struct SettingsView: View {
             }
             
             NavigationLink {
-                PrimaryLocationPicker(primaryLocation: $primaryLocation)
+                LocationPicker(locations:  $locations)
             } label: {
                 LabeledContent {
-                    Text(primaryLocation)
+                    Text("\(locations.count)")
                 } label: {
-                    Label("Primary Location", systemImage: "mappin.and.ellipse")
+                    Label("Locations", systemImage: "mappin.and.ellipse")
                 }
 
             }
