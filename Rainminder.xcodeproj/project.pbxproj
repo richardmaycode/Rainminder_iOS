@@ -90,18 +90,15 @@
 		932A027A295B983F000AAD1E /* Rainminder */ = {
 			isa = PBXGroup;
 			children = (
-				932A02AB29621979000AAD1E /* Info.plist */,
-				932A029F2960B4C4000AAD1E /* Utilities */,
-				932A0289295B98D8000AAD1E /* Views */,
 				932A027B295B983F000AAD1E /* RainminderApp.swift */,
 				932A027D295B983F000AAD1E /* ContentView.swift */,
 				932A027F295B9841000AAD1E /* Assets.xcassets */,
+				932A02AB29621979000AAD1E /* Info.plist */,
+				932A02B629666F3A000AAD1E /* Models */,
+				932A02B529666F1D000AAD1E /* Extensions */,
+				932A029F2960B4C4000AAD1E /* Utilities */,
+				932A0289295B98D8000AAD1E /* Views */,
 				932A0281295B9841000AAD1E /* Preview Content */,
-				932A0290295BA383000AAD1E /* Calendar+Ext.swift */,
-				932A029B2960AEC7000AAD1E /* InterfaceStyle.swift */,
-				932A029D2960AFAD000AAD1E /* UserColorSchemeModifier.swift */,
-				932A02A32960B82F000AAD1E /* AccentStyle.swift */,
-				932A02A729620FEA000AAD1E /* Watch.swift */,
 			);
 			path = Rainminder;
 			sourceTree = "<group>";
@@ -118,12 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				932A02B229666CE5000AAD1E /* Dashboard */,
+				932A02B729666F6F000AAD1E /* Locations */,
 				932A02A22960B743000AAD1E /* Settings */,
 				932A0294295D0098000AAD1E /* Watches */,
-				932A028A295B98EB000AAD1E /* InfoCard.swift */,
-				932A028C295B9A51000AAD1E /* InfoGrid.swift */,
-				932A028E295BA1B2000AAD1E /* WeekSummary.swift */,
-				932A02AE29651E7E000AAD1E /* LocationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,7 +137,10 @@
 		932A029F2960B4C4000AAD1E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				932A02A32960B82F000AAD1E /* AccentStyle.swift */,
 				932A02A02960B4E8000AAD1E /* AppStorageKeys.swift */,
+				932A029B2960AEC7000AAD1E /* InterfaceStyle.swift */,
+				932A029D2960AFAD000AAD1E /* UserColorSchemeModifier.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -162,8 +159,35 @@
 			isa = PBXGroup;
 			children = (
 				932A02B329666CF7000AAD1E /* DashboardView.swift */,
+				932A028A295B98EB000AAD1E /* InfoCard.swift */,
+				932A028C295B9A51000AAD1E /* InfoGrid.swift */,
+				932A028E295BA1B2000AAD1E /* WeekSummary.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		932A02B529666F1D000AAD1E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				932A0290295BA383000AAD1E /* Calendar+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		932A02B629666F3A000AAD1E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				932A02A729620FEA000AAD1E /* Watch.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		932A02B729666F6F000AAD1E /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				932A02AE29651E7E000AAD1E /* LocationCell.swift */,
+			);
+			path = Locations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
