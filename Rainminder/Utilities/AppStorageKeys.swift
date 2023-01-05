@@ -12,4 +12,5 @@ enum AppStorageKeys {
     static let sounds = "allow_sound"
     static let haptics = "allow_haptics"
     static let accent = "accent_color"
+    static let welcome = "welcome_needed"
 }

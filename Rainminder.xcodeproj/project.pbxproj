@@ -30,6 +30,7 @@
 		932A02AF29651E7E000AAD1E /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02AE29651E7E000AAD1E /* LocationCell.swift */; };
 		932A02B129666A0E000AAD1E /* WatchSelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02B029666A0E000AAD1E /* WatchSelectionDialog.swift */; };
 		932A02B429666CF7000AAD1E /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02B329666CF7000AAD1E /* DashboardView.swift */; };
+		932A02B929671272000AAD1E /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02B829671272000AAD1E /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		932A02AE29651E7E000AAD1E /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		932A02B029666A0E000AAD1E /* WatchSelectionDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSelectionDialog.swift; sourceTree = "<group>"; };
 		932A02B329666CF7000AAD1E /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		932A02B829671272000AAD1E /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				932A02B729666F6F000AAD1E /* Locations */,
 				932A02A22960B743000AAD1E /* Settings */,
 				932A0294295D0098000AAD1E /* Watches */,
+				932A02B829671272000AAD1E /* WelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				932A028F295BA1B2000AAD1E /* WeekSummary.swift in Sources */,
 				932A02A829620FEA000AAD1E /* Watch.swift in Sources */,
 				932A02AF29651E7E000AAD1E /* LocationCell.swift in Sources */,
+				932A02B929671272000AAD1E /* WelcomeView.swift in Sources */,
 				932A02AA2962165F000AAD1E /* WatchDayDisplay.swift in Sources */,
 				932A0296295D00B0000AAD1E /* WatchCreateView.swift in Sources */,
 				932A02B129666A0E000AAD1E /* WatchSelectionDialog.swift in Sources */,

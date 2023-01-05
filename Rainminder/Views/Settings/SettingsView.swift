@@ -16,6 +16,8 @@ struct SettingsView: View {
     @AppStorage(AppStorageKeys.sounds) var currentSound: Bool = true
     @AppStorage(AppStorageKeys.haptics) var currentHaptics: Bool = true
     
+    @AppStorage(AppStorageKeys.welcome) var showWelcome: Bool = true
+    
     @State var locations: [RMLocation] = RMLocation.data()
         
     var body: some View {
@@ -26,6 +28,7 @@ struct SettingsView: View {
                 general
                 getInTouch
                 other
+                debug
             }
         }
         .navigationTitle("Settings")
@@ -169,6 +172,15 @@ struct SettingsView: View {
         } header: {
             Text("Other")
         }
+    }
+    
+    var debug: some View {
+        Button(role: .destructive) {
+            showWelcome = true // TODO: Add alert to confirm action
+        } label: {
+            Text("Reset Defaults")
+        }
+
     }
 }
 
