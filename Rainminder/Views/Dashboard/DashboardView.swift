@@ -22,12 +22,7 @@ struct DashboardView: View {
         ScrollView {
             InfoGrid()
             WeekSummary()
-            
-            sectionHeader("Watches", icon: "binoculars.fill")
-            ForEach(Watch.data) { watch in
-                WatchCard(watch: watch, onDetail: { showWatchDetail(for: watch)})
-            }
-            
+            watchSection
             .navigationDestination(isPresented: $isEditingWatch) {
                 WatchCreateView(watch: editWatch, onSubmit: { }, onCancel: { })
             }
@@ -84,6 +79,14 @@ struct DashboardView: View {
                 .presentationDragIndicator(.visible)
         }
         .tint(currentAccentColor.color)
+    }
+    
+    @ViewBuilder
+    var watchSection: some View {
+        sectionHeader("Watches", icon: "binoculars.fill")
+        ForEach(Watch.data) { watch in
+            WatchCard(watch: watch, onDetail: { showWatchDetail(for: watch)})
+        }
     }
     
     @ViewBuilder
