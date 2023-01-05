@@ -28,6 +28,8 @@
 		932A02AA2962165F000AAD1E /* WatchDayDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02A92962165F000AAD1E /* WatchDayDisplay.swift */; };
 		932A02AD2964D42A000AAD1E /* LocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02AC2964D42A000AAD1E /* LocationPicker.swift */; };
 		932A02AF29651E7E000AAD1E /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02AE29651E7E000AAD1E /* LocationCell.swift */; };
+		932A02B129666A0E000AAD1E /* WatchSelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02B029666A0E000AAD1E /* WatchSelectionDialog.swift */; };
+		932A02B429666CF7000AAD1E /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02B329666CF7000AAD1E /* DashboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		932A02AB29621979000AAD1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		932A02AC2964D42A000AAD1E /* LocationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPicker.swift; sourceTree = "<group>"; };
 		932A02AE29651E7E000AAD1E /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		932A02B029666A0E000AAD1E /* WatchSelectionDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSelectionDialog.swift; sourceTree = "<group>"; };
+		932A02B329666CF7000AAD1E /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 		932A0289295B98D8000AAD1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				932A02B229666CE5000AAD1E /* Dashboard */,
 				932A02A22960B743000AAD1E /* Settings */,
 				932A0294295D0098000AAD1E /* Watches */,
 				932A028A295B98EB000AAD1E /* InfoCard.swift */,
@@ -130,6 +135,7 @@
 				932A0295295D00B0000AAD1E /* WatchCreateView.swift */,
 				932A0297295DEE73000AAD1E /* WatchDayToggle.swift */,
 				932A02A92962165F000AAD1E /* WatchDayDisplay.swift */,
+				932A02B029666A0E000AAD1E /* WatchSelectionDialog.swift */,
 			);
 			path = Watches;
 			sourceTree = "<group>";
@@ -150,6 +156,14 @@
 				932A02AC2964D42A000AAD1E /* LocationPicker.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		932A02B229666CE5000AAD1E /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				932A02B329666CF7000AAD1E /* DashboardView.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +246,7 @@
 				932A0291295BA383000AAD1E /* Calendar+Ext.swift in Sources */,
 				932A0298295DEE73000AAD1E /* WatchDayToggle.swift in Sources */,
 				932A028B295B98EB000AAD1E /* InfoCard.swift in Sources */,
+				932A02B429666CF7000AAD1E /* DashboardView.swift in Sources */,
 				932A029A296087CF000AAD1E /* SettingsView.swift in Sources */,
 				932A027C295B983F000AAD1E /* RainminderApp.swift in Sources */,
 				932A029C2960AEC8000AAD1E /* InterfaceStyle.swift in Sources */,
@@ -240,6 +255,7 @@
 				932A02AF29651E7E000AAD1E /* LocationCell.swift in Sources */,
 				932A02AA2962165F000AAD1E /* WatchDayDisplay.swift in Sources */,
 				932A0296295D00B0000AAD1E /* WatchCreateView.swift in Sources */,
+				932A02B129666A0E000AAD1E /* WatchSelectionDialog.swift in Sources */,
 				932A028D295B9A51000AAD1E /* InfoGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

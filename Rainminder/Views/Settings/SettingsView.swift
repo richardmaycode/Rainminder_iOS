@@ -70,7 +70,7 @@ struct SettingsView: View {
             }
             
             NavigationLink {
-                Text("App Icons")
+                Text("App Icons") // TODO: Implement App Icon Selector
             } label: {
                 Label("App Icons", systemImage: "square.grid.2x2.fill")
             }
