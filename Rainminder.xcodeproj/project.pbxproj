@@ -31,6 +31,8 @@
 		932A02B129666A0E000AAD1E /* WatchSelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02B029666A0E000AAD1E /* WatchSelectionDialog.swift */; };
 		932A02B429666CF7000AAD1E /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02B329666CF7000AAD1E /* DashboardView.swift */; };
 		932A02B929671272000AAD1E /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02B829671272000AAD1E /* WelcomeView.swift */; };
+		932A02BC296A0A37000AAD1E /* Rainminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 932A02BA296A0A37000AAD1E /* Rainminder.xcdatamodeld */; };
+		932A02BF296A0A63000AAD1E /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932A02BE296A0A63000AAD1E /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		932A02B029666A0E000AAD1E /* WatchSelectionDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSelectionDialog.swift; sourceTree = "<group>"; };
 		932A02B329666CF7000AAD1E /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		932A02B829671272000AAD1E /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		932A02BB296A0A37000AAD1E /* Rainminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rainminder.xcdatamodel; sourceTree = "<group>"; };
+		932A02BE296A0A63000AAD1E /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 		932A027A295B983F000AAD1E /* Rainminder */ = {
 			isa = PBXGroup;
 			children = (
+				932A02BD296A0A43000AAD1E /* Managers */,
 				932A027B295B983F000AAD1E /* RainminderApp.swift */,
 				932A027D295B983F000AAD1E /* ContentView.swift */,
 				932A027F295B9841000AAD1E /* Assets.xcassets */,
@@ -101,6 +106,7 @@
 				932A029F2960B4C4000AAD1E /* Utilities */,
 				932A0289295B98D8000AAD1E /* Views */,
 				932A0281295B9841000AAD1E /* Preview Content */,
+				932A02BA296A0A37000AAD1E /* Rainminder.xcdatamodeld */,
 			);
 			path = Rainminder;
 			sourceTree = "<group>";
@@ -193,6 +199,14 @@
 			path = Locations;
 			sourceTree = "<group>";
 		};
+		932A02BD296A0A43000AAD1E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				932A02BE296A0A63000AAD1E /* PersistenceManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -266,6 +280,7 @@
 				932A0293295CC422000AAD1E /* WatchCard.swift in Sources */,
 				932A02A12960B4E8000AAD1E /* AppStorageKeys.swift in Sources */,
 				932A027E295B983F000AAD1E /* ContentView.swift in Sources */,
+				932A02BF296A0A63000AAD1E /* PersistenceManager.swift in Sources */,
 				932A02AD2964D42A000AAD1E /* LocationPicker.swift in Sources */,
 				932A02A42960B82F000AAD1E /* AccentStyle.swift in Sources */,
 				932A029E2960AFAD000AAD1E /* UserColorSchemeModifier.swift in Sources */,
@@ -277,6 +292,7 @@
 				932A029A296087CF000AAD1E /* SettingsView.swift in Sources */,
 				932A027C295B983F000AAD1E /* RainminderApp.swift in Sources */,
 				932A029C2960AEC8000AAD1E /* InterfaceStyle.swift in Sources */,
+				932A02BC296A0A37000AAD1E /* Rainminder.xcdatamodeld in Sources */,
 				932A028F295BA1B2000AAD1E /* WeekSummary.swift in Sources */,
 				932A02A829620FEA000AAD1E /* Watch.swift in Sources */,
 				932A02AF29651E7E000AAD1E /* LocationCell.swift in Sources */,
@@ -485,6 +501,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		932A02BA296A0A37000AAD1E /* Rainminder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				932A02BB296A0A37000AAD1E /* Rainminder.xcdatamodel */,
+			);
+			currentVersion = 932A02BB296A0A37000AAD1E /* Rainminder.xcdatamodel */;
+			path = Rainminder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 932A0270295B983F000AAD1E /* Project object */;
 }
