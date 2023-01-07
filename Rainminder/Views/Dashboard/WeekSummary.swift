@@ -26,8 +26,7 @@ struct DataPoint: Identifiable {
 
 struct WeekSummary: View {
     
-    @State var isCompact: Bool = true
-    var hideButtons: Bool = false
+    var isCompact: Bool = true
     
     var body: some View {
         GroupBox {
@@ -37,37 +36,32 @@ struct WeekSummary: View {
                     compact
                 } else {
                     expanded
+                        .frame(maxWidth: .infinity)
                 }
                 
             }
-            .animation(.easeIn(duration: 0.25), value: isCompact)
             .padding(.vertical, 8)
+            .frame(maxWidth: .infinity, alignment: .leading)
         } label: {
             Text("Weekly Summary")
                 .font(.system(.headline, design: .rounded))
         }
         .overlay(alignment: .topTrailing) {
-            if !hideButtons {
-                HStack {
-                    Toggle(isOn: $isCompact, label: {
-                        Image(systemName: "rectangle.expand.vertical")
-                            .font(.caption)
-                    })
-                    .toggleStyle(.button)
-                    
-                    NavigationLink {
-                        NavigationStack {
-                            ScrollView {
-                                WeekSummary(isCompact: false, hideButtons: true)
-                                    .navigationTitle("Summary Expanded")
-                                    .navigationBarTitleDisplayMode(.inline)
-                            }
+            if isCompact {
+                NavigationLink {
+                    NavigationStack {
+                        ScrollView {
+                            WeekSummary(isCompact: false)
+                                .navigationTitle("Summary Expanded")
+                                .navigationBarTitleDisplayMode(.inline)
                         }
-                    } label: {
-                        Image(systemName: "chevron.right.circle")
                     }
+                } label: {
+                    Image(systemName: "chevron.right.circle")
                 }
                 .padding([.top, .trailing],10)
+                
+                
             }
         }
     }
